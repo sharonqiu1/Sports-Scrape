@@ -1,5 +1,5 @@
 import os
-os.chdir("/Users/sharonqiu/documents/sports scrape") #change directory to wherever your files are stored
+os.chdir("/Users/sharonqiu/documents/sports scrape") //change directory to whatever your files are stored
 import dataCollect as collect
 import teamUrlsList as teams
 teamUrls = teams.listTeams()
