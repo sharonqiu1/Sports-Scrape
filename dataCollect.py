@@ -12,18 +12,14 @@ def data_collect(url):
     name_find = init_soup.find("h1",{"itemprop":"name"})
     temp_list = name_find.find_all("span")
     team_name = temp_list[1].get_text()
-    file_list = []
-
 
     for game in games:
         opp_name = game.find("td", {"data-stat":"opp"}).get_text()
         if opp_name != "":
-            date_tag = game.find("td",{"data-stat":"game_date"})
-            if date_tag.has_attr('csk'):
-                date = date_tag['csk']
+            outcome = game.find("td", {"data-stat":"game_outcome"}).get_text()
+            if outcome != "":
+                date = game.find("td",{"data-stat":"game_date"})['csk']
                 csv_file_name = team_name + " vs " + opp_name + ": " + date
-                file_list.append(csv_file_name)
-                outcome = game.find("td", {"data-stat":"game_outcome"}).get_text()
                 team_score = game.find("td", {"data-stat":"pts_off"}).get_text()
                 first_down = game.find("td", {"data-stat":"first_down_off"}).get_text()
                 yards_offensive = game.find("td", {"data-stat":"yards_off"}).get_text()
