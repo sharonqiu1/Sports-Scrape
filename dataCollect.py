@@ -29,7 +29,7 @@ def data_collect(url):
                 if turnovers_lost == "":
                     turnovers_lost = "0"
 
-                os.chdir("/Users/sharonqiu/documents/sports scrape/2017 Data All Teams")
+                os.chdir("/Users/sharonqiu/documents/sports scrape/2017 Data All Teams") #change to 2018 if scraping 2018 scores
                 new_file = open(csv_file_name+".csv","w")
                 with new_file:
                     writer = csv.writer(new_file)
