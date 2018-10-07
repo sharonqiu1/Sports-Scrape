@@ -2,7 +2,7 @@ def listTeams():
     import requests
     from bs4 import BeautifulSoup
 
-    init_request = requests.get("https://www.pro-football-reference.com/years/2017/")
+    init_request = requests.get("https://www.pro-football-reference.com/years/2017/") #change to 2018 if needed
     soup = BeautifulSoup(init_request.content,"html.parser")
     table_container = soup.find("div",{"id":"content"})
 
